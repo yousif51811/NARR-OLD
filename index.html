@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Custom Cursor Example</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            background-color: #1c1c1c;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            width: 100vw;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #button {
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        @media (max-width: 599px) {
+            #button {
+                width: 250px;
+            }
+        }
+
+        @media (min-width: 600px) {
+            #button {
+                width: 200px;
+            }
+        }
+
+        .hidden {
+            opacity: 0;
+            display: none;
+        }
+
+        .fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 999;
+            object-fit: cover;
+            cursor: url('rick.cur'), auto;
+        }
+
+        .rickroll-text {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-size: 18px;
+            font-weight: 300;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img src="button.png" alt="Click Me" id="button" onclick="startRickroll()" />
+    </div>
+
+    <video id="rickVideo" class="hidden fullscreen" loop>
+        <source src="rick.mp4" type="video/mp4">
+    </video>
+
+    <div id="rickrollText" class="hidden rickroll-text">Lmao get rickrolled</div>
+
+    <script>
+        function startRickroll() {
+            const button = document.getElementById("button");
+            button.classList.add("hidden");
+
+            const video = document.getElementById("rickVideo");
+            const text = document.getElementById("rickrollText");
+
+            text.classList.remove("hidden");
+            video.classList.remove("hidden");
+            video.play();
+        }
+    </script>
+</body>
+</html>
