@@ -9,4 +9,5 @@ NARR (Not a rickroll) Is a project to keep rickrolls alive forever by making all
 **Future plans:**
 
 I plan to add more websites if the link becomes too recognizable
+
 I plan to create applications which you can name and change the logo to anything for all platforms to rickroll people looking for cracked apps
